@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kumar Gautam Singh – Portfolio</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --ink: #0f0f0f;
+      --ink2: #3a3a3a;
+      --ink3: #787878;
+      --surface: #f7f5f0;
+      --card: #ffffff;
+      --accent: #1a3a2a;
+      --accent2: #2e6b4a;
+      --accent3: #5cb87a;
+      --line: rgba(0, 0, 0, 0.1);
+      --tag-bg: #e8f5ee;
+      --tag-text: #1a4a2e;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--surface);
+      color: var(--ink);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 17px;
+      color: var(--accent);
+      letter-spacing: -0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink3);
+      text-decoration: none;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent2);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - 56px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-left {
+      padding: 4rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid var(--line);
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent2);
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-name {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -1px;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-name span {
+      display: block;
+      color: var(--accent3);
+    }
+
+    .hero-bio {
+      font-size: 15px;
+      color: var(--ink2);
+      line-height: 1.75;
+      max-width: 400px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent2);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--line);
+      color: var(--ink2);
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent2);
+      color: var(--accent2);
+    }
+
+    .hero-right {
+      padding: 4rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 1.25rem;
+    }
+
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--ink3);
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 1.25rem;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 13.5px;
+      color: var(--ink2);
+      text-decoration: none;
+    }
+
+    .contact-row:last-child {
+      border-bottom: none;
+    }
+
+    .contact-row i {
+      color: var(--accent2);
+      font-size: 16px;
+    }
+
+    section {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-inner {
+      padding: 5rem 2.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent2);
+      font-weight: 500;
+      margin-bottom: 2rem;
+      background: var(--tag-bg);
+      padding: 5px 12px;
+      border-radius: 100px;
+    }
+
+    .section-tag i {
+      font-size: 14px;
+    }
+
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -0.5px;
+      margin-bottom: 3rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .skill-group {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+
+    .skill-group-title {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent2);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .skill-group-title i {
+      font-size: 16px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .skill-tag {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.75rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    .project-card:hover {
+      border-color: var(--accent3);
+    }
+
+    .project-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.2px;
+    }
+
+    .project-desc {
+      font-size: 13.5px;
+      color: var(--ink2);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .project-tag {
+      background: #f0f4f1;
+      color: var(--ink3);
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 9px;
+      border-radius: 100px;
+      letter-spacing: 0.2px;
+    }
+
+    .project-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: flex-end;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      color: var(--accent2);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 5px 10px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      transition: border-color 0.2s, background 0.2s;
+      white-space: nowrap;
+    }
+
+    .project-link:hover {
+      border-color: var(--accent3);
+      background: var(--tag-bg);
+    }
+
+    .project-link i {
+      font-size: 13px;
+    }
+
+    .exp-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0 1.5rem;
+    }
+
+    .exp-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--tag-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent2);
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .exp-role {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--accent);
+      letter-spacing: -0.2px;
+    }
+
+    .exp-company {
+      font-size: 13px;
+      color: var(--accent2);
+      font-weight: 500;
+      margin: 2px 0 12px;
+    }
+
+    .exp-bullets {
+      padding-left: 1rem;
+    }
+
+    .exp-bullets li {
+      font-size: 13.5px;
+      color: var(--ink2);
+      line-height: 1.6;
+      margin-bottom: 6px;
+    }
+
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .edu-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 1.25rem;
+    }
+
+    .edu-degree {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .edu-inst {
+      font-size: 13px;
+      color: var(--ink2);
+      margin-bottom: 8px;
+    }
+
+    .edu-meta {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .edu-year {
+      font-size: 12px;
+      color: var(--ink3);
+    }
+
+    .edu-grade {
+      font-size: 12px;
+      color: var(--accent2);
+      font-weight: 500;
+    }
+
+    .cert-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .cert-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .cert-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: var(--tag-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent2);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .cert-title {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .cert-desc {
+      font-size: 13px;
+      color: var(--ink3);
+      line-height: 1.5;
+    }
+
+    footer {
+      background: var(--accent);
+      color: #c8e6d6;
+      padding: 3rem 2.5rem;
+      text-align: center;
+    }
+
+    .footer-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .footer-sub {
+      font-size: 13px;
+      color: #8fbfa3;
+    }
+
+    .footer-links {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .footer-link {
+      color: #a8d5ba;
+      text-decoration: none;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: color 0.2s;
+    }
+
+    .footer-link:hover {
+      color: #fff;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-left>* {
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .hero-left>*:nth-child(1) {
+      animation-delay: 0.05s;
+    }
+
+    .hero-left>*:nth-child(2) {
+      animation-delay: 0.15s;
+    }
+
+    .hero-left>*:nth-child(3) {
+      animation-delay: 0.25s;
+    }
+
+    .hero-left>*:nth-child(4) {
+      animation-delay: 0.35s;
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-left {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .skills-grid,
+      .edu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        grid-template-columns: 1fr;
+      }
+
+      .project-links {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+
+      nav {
+        padding: 0 1rem;
+      }
+
+      .section-inner {
+        padding: 3rem 1.25rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <span class="nav-logo">KGS</span>
+    <ul class="nav-links">
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow"><i class="ti ti-map-pin"></i> Kolkata, West Bengal, India</p>
+      <h1 class="hero-name">Kumar<br>Gautam<span>Singh</span></h1>
+      <p class="hero-bio">Data Analyst &amp; MCA student passionate about turning raw data into actionable insights —
+        through machine learning, interactive dashboards, and thoughtful visualisations.</p>
+      <div class="hero-ctas">
+        <a href="mailto:gau567u@gmail.com" class="btn-primary"><i class="ti ti-mail"></i> Get in touch</a>
+        <a href="https://www.linkedin.com/in/gautam002/" target="_blank" class="btn-outline"><i
+            class="ti ti-brand-linkedin"></i> LinkedIn</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="contact-card">
+        <a href="mailto:gau567u@gmail.com" class="contact-row"><i class="ti ti-mail"></i> gau567u@gmail.com</a>
+        <a href="tel:+917903409092" class="contact-row"><i class="ti ti-phone"></i> +91 79034 09092</a>
+        <a href="https://www.linkedin.com/in/gautam002/" target="_blank" class="contact-row"><i
+            class="ti ti-brand-linkedin"></i> linkedin.com/in/gautam002</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="skills">
+    <div class="section-inner">
+      <div class="section-tag"><i class="ti ti-code"></i> Technical skills</div>
+      <h2 class="section-title">What I work with</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <div class="skill-group-title"><i class="ti ti-terminal-2"></i> Programming &amp; querying</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span><span class="skill-tag">C</span><span class="skill-tag">MySQL</span>
+            <span class="skill-tag">Excel</span><span class="skill-tag">Google Sheets</span><span class="skill-tag">Data
+              Wrangling</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title"><i class="ti ti-chart-bar"></i> Data visualisation</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Power BI</span><span class="skill-tag">DAX</span><span class="skill-tag">Data
+              Modeling</span>
+            <span class="skill-tag">KPI Tracking</span><span class="skill-tag">Trend Analysis</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title"><i class="ti ti-brain"></i> Data science &amp; ML</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Scikit-learn</span><span class="skill-tag">TensorFlow</span><span
+              class="skill-tag">Pandas</span>
+            <span class="skill-tag">NumPy</span><span class="skill-tag">Matplotlib</span><span
+              class="skill-tag">Seaborn</span>
+            <span class="skill-tag">Model Evaluation</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title"><i class="ti ti-tools"></i> Developer tools</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Git</span><span class="skill-tag">VS Code</span>
+            <span class="skill-tag">PyCharm</span><span class="skill-tag">Jupyter Notebook</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-inner">
+      <div class="section-tag"><i class="ti ti-rocket"></i> Projects</div>
+      <h2 class="section-title">Things I've built</h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div>
+            <div class="project-title">Customer Churn Prediction &amp; Analytics Dashboard</div>
+            <p class="project-desc">End-to-end ML project predicting telecom customer churn on 7,000+ records.
+              Implemented Logistic Regression, Random Forest, and Decision Tree models achieving up to 85% accuracy,
+              paired with a Power BI dashboard to support data-driven retention decisions.</p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span><span class="project-tag">Scikit-learn</span><span
+                class="project-tag">Pandas</span>
+              <span class="project-tag">Seaborn</span><span class="project-tag">Power BI</span><span
+                class="project-tag">EDA</span><span class="project-tag">Random Forest</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link"><i class="ti ti-brand-github"></i> Code</a>
+            <a href="#" class="project-link"><i class="ti ti-layout-dashboard"></i> Dashboard</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <div class="project-title">Real-Time Data Dashboard — Blinkit E-Commerce</div>
+            <p class="project-desc">Built a live Power BI dashboard tracking key e-commerce metrics for Blinkit: sales
+              performance, inventory levels, and customer behaviour. Provided real-time visibility into product trends,
+              order volumes, and stock management to enable faster decisions.</p>
+            <div class="project-tags">
+              <span class="project-tag">Power BI</span><span class="project-tag">DAX</span><span
+                class="project-tag">Data Modeling</span>
+              <span class="project-tag">E-Commerce Analytics</span><span class="project-tag">KPI Tracking</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link"><i class="ti ti-external-link"></i> Live</a>
+            <a href="#" class="project-link"><i class="ti ti-player-play"></i> Video</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <div class="project-title">Interactive Financial Reporting Dashboard</div>
+            <p class="project-desc">Designed dynamic Power BI dashboards visualising revenue, expenses, and profit
+              margins. Automated monthly, quarterly, and annual financial reporting by streamlining data extraction and
+              visualisation — cutting report preparation time by 50%.</p>
+            <div class="project-tags">
+              <span class="project-tag">Power BI</span><span class="project-tag">DAX</span><span
+                class="project-tag">Financial Analytics</span>
+              <span class="project-tag">Automation</span><span class="project-tag">Data Modeling</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link"><i class="ti ti-external-link"></i> Live</a>
+            <a href="#" class="project-link"><i class="ti ti-player-play"></i> Video</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="section-inner">
+      <div class="section-tag"><i class="ti ti-briefcase"></i> Experience</div>
+      <h2 class="section-title">Work history</h2>
+      <div class="exp-card">
+        <div class="exp-icon"><i class="ti ti-music"></i></div>
+        <div>
+          <div class="exp-role">Operations Intern</div>
+          <div class="exp-company">AudiEnt Live Entertainment · Internship</div>
+          <ul class="exp-bullets">
+            <li>Supported daily operations, workflow optimisation, and operational data analysis under senior leadership
+              to improve efficiency.</li>
+            <li>Collected and consolidated branch-level data, prepared reports and dashboards using Microsoft Excel for
+              data-driven management decisions.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="section-inner">
+      <div class="section-tag"><i class="ti ti-school"></i> Education</div>
+      <h2 class="section-title">Academic background</h2>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <div class="edu-degree">Master of Computer Applications (MCA)</div>
+          <div class="edu-inst">GNIT, Kolkata</div>
+          <div class="edu-meta"><span class="edu-year">2024 – 2026</span><span class="edu-grade">7.8 / 10 CGPA</span>
+          </div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-degree">Bachelor of Computer Applications (BCA)</div>
+          <div class="edu-inst">K.B. College, Bermo</div>
+          <div class="edu-meta"><span class="edu-year">2021 – 2024</span><span class="edu-grade">7.11 / 10 CGPA</span>
+          </div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-degree">Class XII — CBSE</div>
+          <div class="edu-inst">DAV Public School, Dhori</div>
+          <div class="edu-meta"><span class="edu-year">2021</span><span class="edu-grade">86%</span></div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-degree">Class X — CBSE</div>
+          <div class="edu-inst">DAV Public School, Dhori</div>
+          <div class="edu-meta"><span class="edu-year">2019</span><span class="edu-grade">73%</span></div>
+        </div>
+      </div>
+
+      <div style="margin-top: 3rem;">
+        <div class="section-tag" style="margin-bottom: 1.5rem;"><i class="ti ti-certificate"></i> Certifications</div>
+        <div class="cert-list">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="ti ti-brand-google"></i></div>
+            <div>
+              <div class="cert-title">Google Student Ambassador Program — Certified</div>
+              <div class="cert-desc">Demonstrated leadership, community engagement, event coordination, and effective
+                communication while representing Google initiatives on campus.</div>
+            </div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-icon"><i class="ti ti-chart-line"></i></div>
+            <div>
+              <div class="cert-title">Data Analytics Bootcamp — Alex Freberg</div>
+              <div class="cert-desc">Hands-on experience in data cleaning, visualisation, and analysis using Python,
+                MySQL, and Power BI. Developed proficiency in data-driven decision-making, statistical analysis, and
+                reporting through real-world projects.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-name">Kumar Gautam Singh</div>
+    <div class="footer-sub">Data Analyst · MCA Student · Kolkata, India</div>
+    <div class="footer-links">
+      <a href="mailto:gau567u@gmail.com" class="footer-link"><i class="ti ti-mail"></i> gau567u@gmail.com</a>
+      <a href="https://www.linkedin.com/in/gautam002/" target="_blank" class="footer-link"><i
+          class="ti ti-brand-linkedin"></i> LinkedIn</a>
+      <a href="tel:+917903409092" class="footer-link"><i class="ti ti-phone"></i> +91 79034 09092</a>
+    </div>
+  </footer>
+
+</body>
+
+</html>
